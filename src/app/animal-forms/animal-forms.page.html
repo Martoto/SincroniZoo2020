@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="back-button">
+      <ion-back-button defaultHref = "/home">
+      </ion-back-button>
+    </div>
+    <div class="ion-padding" align="center">
+      <ion-label>Cadastro</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align = "center">
+    
+    
+    <form #form = "ngForm">
+      
+      <ion-list class = "ion-justify-content-center">
+        <ion-item>
+          <ion-input name = "signinName" placeholder = "Nome*" [(ngModel)]="user.name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name = "signinSurname" placeholder = "Sobrenome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name = "signinEmail" placeholder = "Email*" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name = "signinPhone" placeholder = "Telefone"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name = "signinAdress" placeholder = "Endereço"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name = "signinPassword" placeholder = "Senha*" [(ngModel)]="user.passcode"></ion-input>
+        </ion-item>
+        <ion-text color = "danger" >Preencha todos os campos necessarios!</ion-text>
+        <div class="ion-padding">
+          <ion-button [disabled]="form.invalid" >Confirmar Cadastro</ion-button>
+        </div>
+      </ion-list>
+    </form>
+      
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color = "secondary">
+    <div align="middle">
+      <ion-text>Cadastro animal</ion-text>
+    </div>
+  </ion-toolbar>
+</ion-footer>
