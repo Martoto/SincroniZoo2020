@@ -2,8 +2,7 @@ import {tAnimal} from '../animal-forms/tAnimal'
 
 export class tAuto {
     animals:tAnimal[] = [];
-    date: Date;
-    info: string;
+    date: string;
     latitude: string;
     longitude: string;
     declared_origin: string;
