@@ -4,6 +4,67 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()"
+>
+  <ion-grid>
+    <ion-row fixed>
+      <ion-col size="6" offset="3">
+        <ion-item>
+          <ion-label position="stacked">Digite o Animal</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
+    <ion-row>
+      <ion-col>
+        <ion-card class="animal__card">
+          <ion-card-header>
+            <ion-card-subtitle><em>Nome cientifico</em></ion-card-subtitle>
+            <ion-card-title>Papagaio da cauda Amarela</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Keep close to Nature's heart... and break clear away, once in
+            awhile, and climb a mountain or spend a week in the woods. Wash your
+            spirit clean.
+          </ion-card-content>
+          <ion-chip color="danger">
+            <ion-label>EW - Risco de Extinção</ion-label>
+          </ion-chip>
+          <ion-chip color="danger">
+            <ion-label>Risco de Zoonoses - Alto</ion-label>
+          </ion-chip>
+          <ion-chip color="success">
+            <ion-label>Frequencia de Trafico - Baixa</ion-label>
+          </ion-chip>
+          <ion-button expand="block" color="dark">Detalhes</ion-button>
+        </ion-card>
+      </ion-col>
+
+      <ion-col> </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button color="dark">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="add-sharp">Adicionar Ocorrência</ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="location-sharp">Mapa</ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="document-sharp">Legislação</ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
