@@ -3,8 +3,13 @@ import { NavController } from '@ionic/angular';
 import { tAuto} from './tAuto'
 import { Router } from '@angular/router';
 import { AnimalServiceService } from '../services/animal-service.service';
+import { InfractorServiceService } from "../services/infractor-device.service";
+
 import { tAnimal } from '../animal-forms/tAnimal';
+import { tInfractor } from '../infractor-forms/tInfractor';
+
 import { HTTP } from '@ionic-native/http/ngx';
+
 @Component({
   selector: 'app-auto-form',
   templateUrl: './auto-form.page.html',
@@ -15,6 +20,8 @@ export class AutoFormPage {
   failedRegistering:boolean;
   animals:tAnimal[] = [];
   auto:tAuto;
+  infratores:tInfractor[] = [];
+  
 
   //botao cadastrar auto
   cadastraAuto(auto:tAuto) {
@@ -51,11 +58,20 @@ export class AutoFormPage {
   }
 
 
-  constructor(private router:Router, private animService:AnimalServiceService, private http: HTTP) { }
+  addInfrator(auto:tAuto) {
+
+    this.router.navigateByUrl('/infractor-forms');
+
+  }
+
+
+  constructor(private router:Router, private animService:AnimalServiceService, private http: HTTP,private infService:InfractorServiceService) { }
 
 
   //para recarregar as cartas sempre que entrar na tela novamente
   ionViewDidEnter() {
     this.animals = this.animService.getAnimals();
+    this.infratores = this.infService.getInfractors();
+
   }
 }

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+        <div class="ion-padding" align="center">
+          <ion-back-button defaultHref = "/auto-form">
+          </ion-back-button>
+      <ion-label>Cadastro de Infrator</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align = "center">
+    
+    
+    <form #form = "ngForm" (ngSubmit)=cadastraInfrator(form.value)>
+      
+      <ion-list class = "ion-justify-content-center">
+
+        <ion-item>
+          <ion-input name = "cpf" placeholder = "CPF"  type="text" ngModel></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name = "name" placeholder = "Nome" type="text" ngModel></ion-input>
+        </ion-item>
+
+        <ion-text color = "danger" *ngIf="failedRegistering">Preencha todos os campos necessarios!</ion-text>
+        <div class="ion-padding">
+          <ion-button [disabled]="form.invalid" type="submit" >Confirmar Cadastro</ion-button>
+        </div>
+
+      </ion-list>
+    </form>
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color = "secondary">
+    <div align="middle">
+      <ion-text>Cadastro Infrator</ion-text>
+    </div>
+  </ion-toolbar>
+</ion-footer>
