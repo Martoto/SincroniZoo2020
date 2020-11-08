@@ -10,7 +10,7 @@ import { tAnimal } from '../animal-forms/tAnimal';
   templateUrl: './auto-form.page.html',
   styleUrls: ['./auto-form.page.scss'],
 })
-export class AutoFormPage implements OnInit {
+export class AutoFormPage {
   //entidade se refere ao auto que será criado
   failedRegistering:boolean;
   animals:tAnimal[] = [];
@@ -32,8 +32,8 @@ export class AutoFormPage implements OnInit {
   constructor(private router:Router, private animService:AnimalServiceService) { }
 
 
-  ngOnInit() {
+  ionViewDidEnter() {
     this.animals = this.animService.getAnimals();
-
+    
   }
 }
