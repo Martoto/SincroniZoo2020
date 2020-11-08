@@ -22,11 +22,13 @@
     "@ionic-native/core": "^5.29.0",
     "@ionic-native/geolocation": "^5.29.0",
     "@ionic-native/google-maps": "^5.5.0",
+    "@ionic-native/http": "^5.29.0",
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/sqlite-porter": "^5.29.0",
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.0.0",
     "@ionic/storage": "^2.3.1",
+    "cordova-plugin-advanced-http": "^3.1.0",
     "cordova-plugin-geolocation": "^4.0.2",
     "cordova-plugin-googlemaps": "^2.7.1",
     "cordova-sqlite-storage": "^5.1.0",
@@ -66,7 +68,8 @@
       },
       "cordova-plugin-googlemaps": {},
       "cordova-sqlite-storage": {},
-      "uk.co.workingedge.cordova.plugin.sqliteporter": {}
+      "uk.co.workingedge.cordova.plugin.sqliteporter": {},
+      "cordova-plugin-advanced-http": {}
     }
   }
 }
