@@ -5,7 +5,7 @@ const uuid = function(a,b){for(b=a='';a++<36;b+=a*51&52?(a^15?8^Math.random()*(a
 
 export class tAnimal {
     type:string;
-    id: string;
+    // id: string;
     //modulo e unidade de massa
     quantity:number;
     unit:string;
