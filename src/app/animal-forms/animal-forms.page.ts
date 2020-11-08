@@ -15,7 +15,7 @@ export class AnimalFormsPage implements OnInit {
 
   //botao cadastrar animal
   cadastraAnimal(animal:tAnimal) {
-    console.log(animal.quantity);
+     console.log(animal);
     //serviço animal armazena temporariamente registro tAnimal
      this.animService.pushAnimal(animal);
      this.navCtrl.back();
@@ -25,6 +25,7 @@ export class AnimalFormsPage implements OnInit {
 
 
   ngOnInit() {
+
   }
 
 }
