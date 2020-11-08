@@ -8,10 +8,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'animal-forms',
     loadChildren: () => import('./animal-forms/animal-forms.module').then( m => m.AnimalFormsPageModule)
   },
@@ -30,6 +26,10 @@ const routes: Routes = [
   {
     path: 'map',
     loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
+  {
+    path: 'auto-form',
+    loadChildren: () => import('./auto-form/auto-form.module').then( m => m.AutoFormPageModule)
   }
 ];
 

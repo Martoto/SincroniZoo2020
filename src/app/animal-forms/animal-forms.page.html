@@ -1,11 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <div class="back-button">
-      <ion-back-button defaultHref = "/home">
-      </ion-back-button>
-    </div>
-    <div class="ion-padding" align="center">
-      <ion-label>Cadastro</ion-label>
+        <div class="ion-padding" align="center">
+          <ion-back-button defaultHref = "/auto-form">
+          </ion-back-button>
+      <ion-label>Cadastro de animal</ion-label>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -14,31 +12,53 @@
   <div align = "center">
     
     
-    <form #form = "ngForm">
+    <form #form = "ngForm" (ngSubmit)=cadastraAnimal(form.value)>
       
       <ion-list class = "ion-justify-content-center">
+
         <ion-item>
-          <ion-input name = "signinName" placeholder = "Nome*" [(ngModel)]="user.name"></ion-input>
+          <ion-input name = "quantity" placeholder = "Quantidade"  type="number" ngModel></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input name = "signinSurname" placeholder = "Sobrenome"></ion-input>
+          <ion-input name = "unit" placeholder = "Unidade" type="text" ngModel></ion-input>
         </ion-item>
+
         <ion-item>
-          <ion-input name = "signinEmail" placeholder = "Email*" [(ngModel)]="user.email"></ion-input>
+          <ion-select name = "type" value="Fauna" okText="Okay" cancelText="Dismiss">
+            <ion-select-option value="Fauna">Fauna</ion-select-option>
+            <ion-select-option value="Flora">Flora</ion-select-option>
+            <ion-select-option value="Pescado">Pescado</ion-select-option>
+          </ion-select>
         </ion-item>
+
         <ion-item>
-          <ion-input name = "signinPhone" placeholder = "Telefone"></ion-input>
+          <ion-input  name="unit" placeholder = "Unidade" type="text" ngModel></ion-input>
         </ion-item>
+
         <ion-item>
-          <ion-input name = "signinAdress" placeholder = "Endereço"></ion-input>
+          <ion-input  name="injuries" placeholder = "Ferimentos" type="text" ngModel></ion-input>
         </ion-item>
+
         <ion-item>
-          <ion-input name = "signinPassword" placeholder = "Senha*" [(ngModel)]="user.passcode"></ion-input>
+          <ion-textarea  name="notes" placeholder = "Anotações" ngModel></ion-textarea>
         </ion-item>
-        <ion-text color = "danger" >Preencha todos os campos necessarios!</ion-text>
+
+        <ion-item>
+          <ion-input  name="forwarding" placeholder = "Encaminhamento" type="text" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-select name = "vivoMorto" value="Vivo" okText="Okay" cancelText="Dismiss">
+            <ion-select-option value="True">Vivo</ion-select-option>
+            <ion-select-option value="False">Morto</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-text color = "danger" *ngIf="failedRegistering">Preencha todos os campos necessarios!</ion-text>
         <div class="ion-padding">
-          <ion-button [disabled]="form.invalid" >Confirmar Cadastro</ion-button>
+          <ion-button [disabled]="form.invalid" type="submit" >Confirmar Cadastro</ion-button>
         </div>
+
       </ion-list>
     </form>
       

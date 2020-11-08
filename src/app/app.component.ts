@@ -15,14 +15,9 @@ export class AppComponent implements OnInit {
     //USAR URL DA PAGINA IGUAL O NOME DO FONTE DA TELA
     //Para criar nova tela usar: ionic generate <nome-pagina>
     {
-      title: 'Adicionar animal',
-      url: '/animal-forms',
-      icon: 'add-circle'
-    },
-    {
-      title: 'Animais cadastrados',
-      url: '/animal-list',
-      icon: 'apps'
+      title: 'Registrar auto de infração',
+      url: '/auto-form',
+      icon: 'hand-left'
     },
     {
       title: 'Guia de animais',
