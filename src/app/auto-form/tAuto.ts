@@ -1,10 +1,17 @@
 import {tAnimal} from '../animal-forms/tAnimal'
 
 export class tAuto {
-    id: string;
     animals:tAnimal[] = [];
-    info: string;
-  
+    date: string;
+    latitude: string;
+    longitude: string;
+    declared_origin: string;
+    possibly_international: 1;
+    vehicle: string;
+    organization: string;
+    // individuals: tIndividuals[]=[];
+    // infractions:tInfractions[]=[];
+
   //   constructor(id:string, animais:animalList, info:string) {
   //     this.id = id;
   //     this.animais = animais;
