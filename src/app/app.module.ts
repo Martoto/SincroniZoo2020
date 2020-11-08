@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { Geolocation } from '@ionic-native/geolocation';
 import { IonicStorageModule } from '@ionic/storage';
 import { AnimalServiceService } from './services/animal-service.service';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,8 @@ import { AnimalServiceService } from './services/animal-service.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AnimalServiceService
+    AnimalServiceService,
+    HTTP
   ],
   bootstrap: [AppComponent]
 })
