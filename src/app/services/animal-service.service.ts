@@ -11,7 +11,7 @@ export class AnimalServiceService {
   }
 
   getAnimals() {
-    return [...this.animals];
+    return this.animals.slice();
   }
 }
 

@@ -24,7 +24,7 @@
         </ion-item>
 
         <ion-item>
-          <ion-select name = "type" value="Fauna" okText="Okay" cancelText="Dismiss">
+          <ion-select name = "type" value="Fauna" okText="Ok" cancelText="Cancela" ngModel>
             <ion-select-option value="Fauna">Fauna</ion-select-option>
             <ion-select-option value="Flora">Flora</ion-select-option>
             <ion-select-option value="Pescado">Pescado</ion-select-option>
@@ -48,7 +48,7 @@
         </ion-item>
 
         <ion-item>
-          <ion-select name = "vivoMorto" value="Vivo" okText="Okay" cancelText="Dismiss">
+          <ion-select name = "alive" value="True" okText="Ok" cancelText="Cancela" ngModel>
             <ion-select-option value="True">Vivo</ion-select-option>
             <ion-select-option value="False">Morto</ion-select-option>
           </ion-select>
@@ -61,7 +61,6 @@
 
       </ion-list>
     </form>
-      
     </div>
 </ion-content>
 
