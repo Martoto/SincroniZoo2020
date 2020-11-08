@@ -3,7 +3,10 @@ import { NavController } from '@ionic/angular';
 import { tAuto} from './tAuto'
 import { Router } from '@angular/router';
 import { AnimalServiceService } from '../services/animal-service.service';
+import { InfractorServiceService } from "../services/infractor-device.service";
+
 import { tAnimal } from '../animal-forms/tAnimal';
+import { tInfractor } from '../infractor-forms/tInfractor';
 
 @Component({
   selector: 'app-auto-form',
@@ -15,6 +18,8 @@ export class AutoFormPage {
   failedRegistering:boolean;
   animals:tAnimal[] = [];
   auto:tAuto;
+  infratores:tInfractor[] = [];
+  
 
   //botao cadastrar auto
   cadastraAuto(auto:tAuto) {
@@ -29,11 +34,21 @@ export class AutoFormPage {
   }
 
 
-  constructor(private router:Router, private animService:AnimalServiceService) { }
+
+
+  addInfrator(auto:tAuto) {
+
+    this.router.navigateByUrl('/infractor-forms');
+
+  }
+
+
+  constructor(private router:Router, private animService:AnimalServiceService,private infService:InfractorServiceService) { }
 
 
   ionViewDidEnter() {
     this.animals = this.animService.getAnimals();
-    
+    this.infratores = this.infService.getInfractors();
+
   }
 }

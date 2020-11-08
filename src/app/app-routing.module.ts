@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: () => import('./animal-forms/animal-forms.module').then( m => m.AnimalFormsPageModule)
   },
   {
+    path: 'infractor-forms',
+    loadChildren: () => import('./infractor-forms/infaractor-forms.module').then( m => m.InfractorFormsPageModule)
+  },
+
+  {
     path: 'animal-list',
     loadChildren: () => import('./animal-list/animal-list.module').then( m => m.AnimalListPageModule)
   },
