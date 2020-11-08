@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimalListPage implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit() {

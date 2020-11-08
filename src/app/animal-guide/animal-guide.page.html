@@ -16,12 +16,15 @@
         <ion-item>
           <ion-label position="stacked">Digite o Animal</ion-label>
           <ion-input></ion-input>
+          <ion-button (click)="Get()"></ion-button>
         </ion-item>
       </ion-col>
     </ion-row>
 
+    <!-- <ion-button (click)="console.log(species)"></ion-button> -->
     <ion-row>
-      <ion-col>
+      <ion-card ion-item *ngFor="let spp of species">
+        <ion-col>
         <ion-card class="animal__card">
           <ion-card-header>
             <ion-card-subtitle><em>Nome cientifico</em></ion-card-subtitle>
@@ -45,8 +48,7 @@
           <ion-button expand="block" color="dark">Detalhes</ion-button>
         </ion-card>
       </ion-col>
-
-      <ion-col> </ion-col>
+    </div>
     </ion-row>
   </ion-grid>
 
