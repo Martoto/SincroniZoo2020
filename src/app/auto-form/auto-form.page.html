@@ -84,7 +84,7 @@
         </ion-item>
 
         <ion-item>
-          <ion-button disabled={{true}} (click)="consele.log('Em Breve')"
+          <ion-button (click)="addInfrator(form.value)"
             >Adicionar Infratores</ion-button
           >
         </ion-item>
@@ -96,13 +96,24 @@
         >
       </ion-item>
       <ion-list>
-        <ion-list-header>Animais referentes ao auto</ion-list-header>
+        <ion-list-header>Animais no auto</ion-list-header>
         <ion-card ion-item *ngFor="let animal of animals">
           <ion-card-header>
             <ion-card-subtitle>{{animal.quantity}}</ion-card-subtitle>
             <ion-card-title>{{animal.type}}</ion-card-title>
           </ion-card-header>
           <ion-card-content> {{animal.notes}} </ion-card-content>
+        </ion-card>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header>Infratores no auto</ion-list-header>
+        <ion-card ion-item *ngFor="let infrator of infratores">
+          <ion-card-header>
+            <ion-card-subtitle>{{infrator.name}}</ion-card-subtitle>
+            <ion-card-title>{{infrator.cpf}}</ion-card-title>
+          </ion-card-header>
+         
         </ion-card>
       </ion-list>
 
