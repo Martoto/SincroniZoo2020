@@ -5,10 +5,7 @@
 </ion-header>
 
 <ion-content
-  [scrollEvents]="true"
-  (ionScrollStart)="logScrollStart()"
-  (ionScroll)="logScrolling($event)"
-  (ionScrollEnd)="logScrollEnd()"
+
 >
   <ion-grid>
     <ion-row fixed>
@@ -21,20 +18,31 @@
       </ion-col>
     </ion-row>
 
-    <!-- <ion-button (click)="console.log(species)"></ion-button> -->
+    <ion-button (click)="consolel(species)"></ion-button>
     <ion-row>
-      <ion-card ion-item *ngFor="let spp of species">
-        <ion-col>
+      <ion-col *ngFor="let spp of species">
         <ion-card class="animal__card">
+          <ion-list>
+            <ion-row>
+            <ion-col *ngFor="let picture of spp.pictures">
+                <ion-img style="margin:autp;height:auto; width:30vw"[src]="picture.img_url"></ion-img>
+            </ion-col>
+          </ion-row>
+          </ion-list>
           <ion-card-header>
-            <ion-card-subtitle><em>Nome cientifico</em></ion-card-subtitle>
-            <ion-card-title>Papagaio da cauda Amarela</ion-card-title>
+            <ion-card-subtitle><em>{{spp.genus}} {{spp.species}}</em></ion-card-subtitle>
+            <ion-card-title>{{spp.port_name}}</ion-card-title>
           </ion-card-header>
 
+          <ion-list>
+</ion-list>
           <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in
-            awhile, and climb a mountain or spend a week in the woods. Wash your
-            spirit clean.
+            <h1>Características</h1>
+            <ion-item *ngFor="let char of spp.characteristics">
+             <strong><h2>{{char.type}}:</h2></strong><p>{{char.description}}</p>
+             
+            </ion-item>
+          
           </ion-card-content>
           <ion-chip color="danger">
             <ion-label>EW - Risco de Extinção</ion-label>
@@ -48,7 +56,6 @@
           <ion-button expand="block" color="dark">Detalhes</ion-button>
         </ion-card>
       </ion-col>
-    </div>
     </ion-row>
   </ion-grid>
 

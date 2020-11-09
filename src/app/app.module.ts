@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouteReuseStrategy } from "@angular/router";
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { Geolocation } from '@ionic-native/geolocation';
-import { IonicStorageModule } from '@ionic/storage';
-import { AnimalServiceService } from './services/animal-service.service';
-import { HTTP } from '@ionic-native/http/ngx';
+import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { Geolocation } from "@ionic-native/geolocation";
+import { IonicStorageModule } from "@ionic/storage";
+import { AnimalServiceService } from "./services/animal-service.service";
+import { SpeciesServiceService } from "./services/species-service.service";
 
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,15 +21,16 @@ import { HTTP } from '@ionic-native/http/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AnimalServiceService,
-    HTTP
+    SpeciesServiceService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

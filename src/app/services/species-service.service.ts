@@ -9,9 +9,10 @@
     pushSpecies(spp:[tSpecies]) {
         console.log("push",spp)
       this.species.push(...spp);
+      console.log(this.species)
     }
   
-    getInfractors() {
+    getSpecies() {
       return this.species.slice();
     }
   }

@@ -8,7 +8,8 @@ import { InfractorServiceService } from "../services/infractor-device.service";
 import { tAnimal } from '../animal-forms/tAnimal';
 import { tInfractor } from '../infractor-forms/tInfractor';
 
-import { HTTP } from '@ionic-native/http/ngx';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-auto-form',
@@ -40,21 +41,21 @@ export class AutoFormPage {
   }
 
   sendPostRequestAuto(auto:tAuto) {
-    this.http.get('https://ionic.io', {}, {})
-  .then(data => {
+    this.http.get('https://ionic.io')
+  // .then(data => {
 
-    console.log(data.status);
-    console.log(data.data); // data received by server
-    console.log(data.headers);
+  //   console.log(data.status);
+  //   console.log(data.data); // data received by server
+  //   console.log(data.headers);
 
-  })
-  .catch(error => {
+  // })
+  // .catch(error => {
 
-    console.log(error.status);
-    console.log(error.error); // error message as string
-    console.log(error.headers);
+  //   console.log(error.status);
+  //   console.log(error.error); // error message as string
+  //   console.log(error.headers);
 
-  });
+  // });
   }
 
 
@@ -65,7 +66,7 @@ export class AutoFormPage {
   }
 
 
-  constructor(private router:Router, private animService:AnimalServiceService, private http: HTTP,private infService:InfractorServiceService) { }
+  constructor(private router:Router, private animService:AnimalServiceService, private http: HttpClient,private infService:InfractorServiceService) { }
 
 
   //para recarregar as cartas sempre que entrar na tela novamente

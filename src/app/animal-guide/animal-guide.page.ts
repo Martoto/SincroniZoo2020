@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { tSpecies } from "./tSpecies";
-import { HTTP } from '@ionic-native/http/ngx';
+import { HttpClient } from '@angular/common/http';
 import { SpeciesServiceService } from "../services/species-service.service";
 
 
@@ -10,12 +10,12 @@ import { SpeciesServiceService } from "../services/species-service.service";
   styleUrls: ["./animal-guide.page.scss"],
 })
 export class AnimalGuidePage implements OnInit {
-  species:tSpecies;
+  species:tSpecies[]=[];
 
 
-  // Get() {
-  //   console.log("here")
-  //   this.http.get('https://hack-gaia-api.herokuapp.com/get_species', {}, {})
+  Get() {
+    console.log("here")
+    this.http.get('https://hack-gaia-api.herokuapp.com/get_species')
   // .then(data => {
   //   this.speciesService.pushSpecies(JSON.parse(data.data)); // data received by server
     
@@ -27,10 +27,16 @@ export class AnimalGuidePage implements OnInit {
   //   console.log(error.headers);
 
   // });
-  // }
+  }
 
+  consolel(spp){console.log(spp)}
 
-  constructor(private http: HTTP, private speciesService:SpeciesServiceService) {}
+  ionViewDidEnter() {
+    this.species = this.speciesService.getSpecies();
+
+  }
+
+  constructor(private http: HttpClient, private speciesService:SpeciesServiceService) {}
 
   ngOnInit() {}
 }
