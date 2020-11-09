@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Guia de Leis do Tráfico Ilegal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let law of laws">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>{{law.law_date}}</ion-card-subtitle>
+        <ion-card-title>Lei n°{{law.law_number}}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p style="white-space: pre-line">{{law.law_text}}</p>
+      </ion-card-content>
+    </ion-card>
+    
+    </div>
+</ion-content>

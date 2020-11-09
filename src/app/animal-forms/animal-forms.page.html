@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+        <div class="ion-padding" align="center">
+          <ion-back-button defaultHref = "/auto-form">
+          </ion-back-button>
+      <ion-label>Cadastro de animal</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align = "center">
+    
+    
+    <form #form = "ngForm" (ngSubmit)=cadastraAnimal(form.value)>
+      
+      <ion-list class = "ion-justify-content-center">
+
+        <ion-item>
+          <ion-input name = "spp" placeholder = "Espécie"  type="text" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input name = "quantity" placeholder = "Quantidade"  type="number" ngModel></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name = "unit" placeholder = "Unidade" type="text" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-select name = "type" placeholder="Tipo" value="Fauna" okText="Ok" cancelText="Cancela" ngModel>
+            <ion-select-option value="Fauna">Fauna</ion-select-option>
+            <ion-select-option value="Flora">Flora</ion-select-option>
+            <ion-select-option value="Pescado">Pescado</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-input  name="injuries" placeholder = "Ferimentos" type="text" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-textarea  name="notes" placeholder = "Anotações" ngModel></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <ion-input  name="forwarding" placeholder = "Encaminhamento" type="text" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-select placeholder="Vivo" name = "alive" value="True" okText="Ok" cancelText="Cancela" ngModel>
+            <ion-select-option value="True">Vivo</ion-select-option>
+            <ion-select-option value="False">Morto</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-text color = "danger" *ngIf="failedRegistering">Preencha todos os campos necessarios!</ion-text>
+        <div class="ion-padding">
+          <ion-button [disabled]="form.invalid" type="submit" >Confirmar Cadastro</ion-button>
+        </div>
+
+      </ion-list>
+    </form>
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color = "secondary">
+    <div align="middle">
+      <ion-text>Cadastro animal</ion-text>
+    </div>
+  </ion-toolbar>
+</ion-footer>

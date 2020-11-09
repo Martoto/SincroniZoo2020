@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="ion-padding" align="center">
+      <ion-label>Cadastro de infração</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align="center">
+    <form #form="ngForm" (ngSubmit)="cadastraAuto(form.value)">
+      <ion-list class="ion-justify-content-center">
+        <ion-item>
+          <ion-datetime
+            name="date"
+            displayFormat="D MMM YYYY H:mm"
+            value="2020-11-08T20:47:20.789Z"
+          ></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-textarea
+            name="latitude"
+            placeholder="Latitude"
+            ngModel
+          ></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-textarea
+            name="longitude"
+            placeholder="Longitude"
+            ngModel
+          ></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-textarea
+            name="declaration_origin"
+            placeholder="Declaração de Origem"
+            ngModel
+          ></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-select
+            name="possibly_international"
+            placeholder="Possivelmente Tráfico Internacional?"
+            ngModel
+          >
+            <ion-select-option value="1">Sim</ion-select-option>
+            <ion-select-option value="0">Não</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select
+            name="vehicle"
+            placeholder="Veículo de Transporte"
+            ngModel
+          >
+            <ion-select-option value="Carro">Carro</ion-select-option>
+            <ion-select-option value="Ônibus">Ônibus</ion-select-option>
+            <ion-select-option value="Avião">Avião</ion-select-option>
+            <ion-select-option value="Barco">Barco</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-select
+            name="organization"
+            placeholder="Organização"
+            ngModel
+          >
+            <ion-select-option value="Polícia Federal">Polícia Federal</ion-select-option>
+            <ion-select-option value="Polícia Estadual">Polícia Estadual</ion-select-option>
+            <ion-select-option value="IBAMA">IBAMA</ion-select-option>
+            <ion-select-option value="ICMBio">ICMBio</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+     
+        <ion-item>
+          <ion-button (click)="addInfraction(form.value)">Adicionar Infração</ion-button
+          >
+        </ion-item>
+
+        <ion-item>
+          <ion-button (click)="addInfrator(form.value)"
+            >Adicionar Infratores</ion-button
+          >
+        </ion-item>
+  
+
+      <ion-item>
+        <ion-button (click)="addAnimal(form.value)"
+          >Adicionar animal</ion-button
+        >
+      </ion-item>
+      <ion-list>
+        <ion-list-header>Animais no auto</ion-list-header>
+        <ion-card ion-item *ngFor="let animal of animals">
+          <ion-card-header>
+            <ion-card-subtitle>{{animal.quantity}}</ion-card-subtitle>
+            <ion-card-title>{{animal.type}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content> {{animal.notes}} </ion-card-content>
+        </ion-card>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header>Infratores no auto</ion-list-header>
+        <ion-card ion-item *ngFor="let infrator of infratores">
+          <ion-card-header>
+            <ion-card-subtitle>{{infrator.cpf}}</ion-card-subtitle>
+            <ion-card-title>{{infrator.name}}</ion-card-title>
+          </ion-card-header>
+         
+        </ion-card>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header>Infrações no auto</ion-list-header>
+        <ion-card ion-item *ngFor="let infraction of infractions">
+          <ion-card-header>
+            <ion-card-subtitle>{{infraction.article}}</ion-card-subtitle>
+          </ion-card-header>
+         
+        </ion-card>
+      </ion-list>
+
+      <ion-text color="danger" *ngIf="failedRegistering"
+      >Preencha todos os campos necessarios!</ion-text
+    >
+    <div class="ion-padding">
+      <ion-button [disabled]="form.invalid" type="submit"
+        >Confirmar Cadastro</ion-button
+      >
+    </div>
+  </ion-list>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <div align="middle">
+      <ion-text>Cadastro animal</ion-text>
+    </div>
+  </ion-toolbar>
+  
+</ion-footer>

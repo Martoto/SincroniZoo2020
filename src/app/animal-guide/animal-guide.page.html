@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>animal-guide</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+>
+  <ion-grid>
+    <ion-row fixed>
+      <ion-col size="6" offset="3">
+        <ion-item>
+          <ion-label position="stacked">Digite o Animal</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card class="animal__card">
+          <ion-card-header>
+            <ion-img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Cyanopsitta_spixii_-_Museum_fur_Naturkunde%2C_Berlin_-_DSC00194.JPG"></ion-img>
+            <ion-card-subtitle><em>Cyanopsitta spixii</em></ion-card-subtitle>
+            <ion-card-title>Ararinha azul</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            55-60cm de comprimento; 1,20 m de envergadura. Plumagem azul claro...
+          </ion-card-content>
+          <ion-chip color="danger">
+            <ion-label>EW - Risco de Extinção</ion-label>
+          </ion-chip>
+          <ion-chip color="danger">
+            <ion-label>Risco de Zoonoses - Alto</ion-label>
+          </ion-chip>
+          <ion-chip color="success">
+            <ion-label>Frequencia de Trafico - Baixa</ion-label>
+          </ion-chip>
+          <ion-button expand="block" color="dark">Detalhes</ion-button>
+        </ion-card>
+      </ion-col>
+
+      <ion-col> </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button color="dark">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="add-sharp">Adicionar Ocorrência</ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="location-sharp">Mapa</ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="document-sharp">Legislação</ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

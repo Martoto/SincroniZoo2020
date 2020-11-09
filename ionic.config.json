@@ -1,5 +1,7 @@
 {
   "name": "SincroniZoo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
