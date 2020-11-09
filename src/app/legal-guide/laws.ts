@@ -8,15 +8,5 @@ export const laws = [
         law_number: '5.197',
         law_date: "03 de janeiro de 1967",
         law_text: 'Art. 29. São circunstâncias que agravam a pena afor, aquelas constantes do Código Penal e da Lei das Contravenções Penais, as seguintes:\n        a) cometer a infração em período defeso à caça ou durante à noite;\n        b) empregar fraude ou abuso de confiança;\n        c) aproveitar indevidamente licença de autoridade;\n        d) incidir a infração sobre animais silvestres e seus produtos oriundos de áreas onde a caça é proibida.'
-      },
-    // {
-    //   name: 'Phone Mini',
-    //   price: 699,
-    //   description: 'A great phone with one of the best cameras'
-    // },
-    // {
-    //   name: 'Phone Standard',
-    //   price: 299,
-    //   description: ''
-    // }
+      }
   ];

@@ -15,6 +15,9 @@ export class MapPage implements OnInit {
   mapCanvas: any;
   points: any;
   marker: any;
+  directionsService = new google.maps.DirectionsService;
+  directionsDisplay = new google.maps.DirectionsRenderer;
+
 
   @ViewChild('map', {read:ElementRef, static:false}) mapRef : ElementRef;
 
@@ -34,7 +37,7 @@ export class MapPage implements OnInit {
 
     //config do mapa
     const mapOptions = {
-      zoom: 18,
+      zoom: 3,
       center: position,
       disableDefaultUI: true
     }

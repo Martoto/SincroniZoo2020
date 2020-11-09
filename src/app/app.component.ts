@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
     }
   ];
   //Rótulos embaixo das telas
-  public labels = ['Aves', 'Macacos', 'Pescados', 'Répteis'];
+  public labels = ['Macacos'];
 
   constructor(
     private router : Router,

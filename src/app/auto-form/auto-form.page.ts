@@ -31,13 +31,13 @@ export class AutoFormPage {
   //botao cadastrar auto
   cadastraAuto(auto:tAuto) {
     //foi a maneira mais direta de checar se nao eh nulo
-    // if (auto.animals.length > 0 && auto.date.length > 0 && auto.latitude.length > 0 && auto.longitude.length > 0) {
-    //   this.sendPostRequestAuto(auto);
-    // } else {
-    //   this.failedRegistering = true;
-    // }
+     if (auto.animals.length > 0 && auto.date.length > 0 && auto.latitude.length > 0 && auto.longitude.length > 0) {
+       this.sendPostRequestAuto(auto);
+    } else {
+    this.failedRegistering = true;
+    }
 
-    this.sendPostRequestAuto(auto);
+
   }
 
   addAnimal(auto:tAuto) {

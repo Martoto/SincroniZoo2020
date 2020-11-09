@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ViewChild, ElementRef} from '@angular/core';
+
 declare var google;
 
 
@@ -60,12 +61,12 @@ export class Point {
   
     constructor (map:any) {
       this.pointsArray = [
-        new Point('UTFPR Entrada Sul',  [-48.079167,-8.06667] ,true, map, PointsStructure.icon),
-        new Point('UTFPR Bloco C',  [-25.4392181,-49.2685771] ,true, map, PointsStructure.icon),
-        new Point('UTFPR TUBO',  [-25.4392274,-49.2685282] ,false, map, PointsStructure.iconG),
-        new Point('Silva Jardim',  [-25.4403948,-49.2682482] ,true, map, PointsStructure.icon),
-        new Point('Alegria',  [-25.4406819,-49.2672727] ,true, map, PointsStructure.icon),
-        new Point('Harmonia',  [-25.4400847,-49.26811] ,true, map, PointsStructure.icon)
+        new Point('Animal 1',  [1.1,-52] ,true, map, PointsStructure.icon),
+        new Point('Animal 2',  [1.4392181,-53.2685771] ,true, map, PointsStructure.icon),
+        new Point('Animal 3',  [2.4392274,-66.2685282] ,false, map, PointsStructure.icon),
+        new Point('Animal 4',  [4.4403948,-53.2682482] ,true, map, PointsStructure.icon),
+        new Point('Animal 5',  [-1.4406819,-49.2672727] ,true, map, PointsStructure.icon),
+        new Point('Auto animal',  [-12.4400847,-38.26811] ,true, map, PointsStructure.icon)
       ]
     }
 }
