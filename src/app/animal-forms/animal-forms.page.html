@@ -17,6 +17,10 @@
       <ion-list class = "ion-justify-content-center">
 
         <ion-item>
+          <ion-input name = "spp" placeholder = "Espécie"  type="text" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
           <ion-input name = "quantity" placeholder = "Quantidade"  type="number" ngModel></ion-input>
         </ion-item>
         <ion-item>
@@ -24,15 +28,11 @@
         </ion-item>
 
         <ion-item>
-          <ion-select name = "type" value="Fauna" okText="Ok" cancelText="Cancela" ngModel>
+          <ion-select name = "type" placeholder="Tipo" value="Fauna" okText="Ok" cancelText="Cancela" ngModel>
             <ion-select-option value="Fauna">Fauna</ion-select-option>
             <ion-select-option value="Flora">Flora</ion-select-option>
             <ion-select-option value="Pescado">Pescado</ion-select-option>
           </ion-select>
-        </ion-item>
-
-        <ion-item>
-          <ion-input  name="unit" placeholder = "Unidade" type="text" ngModel></ion-input>
         </ion-item>
 
         <ion-item>
@@ -48,7 +48,7 @@
         </ion-item>
 
         <ion-item>
-          <ion-select name = "alive" value="True" okText="Ok" cancelText="Cancela" ngModel>
+          <ion-select placeholder="Vivo" name = "alive" value="True" okText="Ok" cancelText="Cancela" ngModel>
             <ion-select-option value="True">Vivo</ion-select-option>
             <ion-select-option value="False">Morto</ion-select-option>
           </ion-select>
