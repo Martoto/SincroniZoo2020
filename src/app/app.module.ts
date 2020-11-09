@@ -12,6 +12,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { IonicStorageModule } from '@ionic/storage';
 import { AnimalServiceService } from './services/animal-service.service';
 import { HTTP } from '@ionic-native/http/ngx';
+import { InfractionServiceService } from './services/infraction-device.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { HTTP } from '@ionic-native/http/ngx';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AnimalServiceService,
+    InfractionServiceService,
     HTTP
   ],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import {tAnimal} from '../animal-forms/tAnimal'
+import { tInfractor } from '../infractor-forms/tInfractor';
+import {tInfraction} from '../infraction-form/tInfraction'
 
 export class tAuto {
     animals:tAnimal[] = []; //nao nulo
@@ -9,16 +11,10 @@ export class tAuto {
     possibly_international: 1;
     vehicle: string;
     organization: string;
-    // individuals: tIndividuals[]=[];
-    // infractions:tInfractions[]=[];
+    individuals: tInfractor[] = [];
+    infractions:tInfraction[]=[];
 
-  //   constructor(id:string, animais:animalList, info:string) {
-  //     this.id = id;
-  //     this.animais = animais;
-  //     this.info = info;
-  
-  // }
-
+   
   salvarEntidade() {
       //TODO metodo para salvar entidade no banco de dados
   }

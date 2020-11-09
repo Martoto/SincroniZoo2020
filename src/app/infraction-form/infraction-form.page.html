@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+        <div class="ion-padding" align="center">
+          <ion-back-button defaultHref = "/auto-form">
+          </ion-back-button>
+      <ion-label>Cadastro de Infração</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align = "center">
+    
+    
+    <form #form = "ngForm" (ngSubmit)=cadastraInfraction(form.value)>
+      
+      <ion-list class = "ion-justify-content-center">
+
+        <ion-item>
+          <ion-select
+            name="article"
+            placeholder="Parágrafo"
+            ngModel
+          >
+            <ion-select-option value="1. Animaisportando sistemas de marcação irregulares">1. Animaisportando sistemas de marcação irregulares</ion-select-option>
+            <ion-select-option value="2. Animais encontrados sem prova de origem">2. Animais encontrados sem prova de origem</ion-select-option>
+            <ion-select-option value="3.Partes e produtos de animais sem prova de origem">3.Partes e produtos de animais sem prova de origem</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+
+        <ion-text color = "danger" *ngIf="failedRegistering">Preencha todos os campos necessarios!</ion-text>
+        <div class="ion-padding">
+          <ion-button [disabled]="form.invalid" type="submit" >Confirmar Cadastro</ion-button>
+        </div>
+
+      </ion-list>
+    </form>
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color = "secondary">
+    <div align="middle">
+      <ion-text>Cadastro Infrator</ion-text>
+    </div>
+  </ion-toolbar>
+</ion-footer>

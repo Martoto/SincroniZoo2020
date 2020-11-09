@@ -35,6 +35,10 @@ const routes: Routes = [
   {
     path: 'auto-form',
     loadChildren: () => import('./auto-form/auto-form.module').then( m => m.AutoFormPageModule)
+  },
+  {
+    path: 'infraction-form',
+    loadChildren: () => import('./infraction-form/infraction-form.module').then( m => m.InfractionFormPageModule)
   }
 ];
 
